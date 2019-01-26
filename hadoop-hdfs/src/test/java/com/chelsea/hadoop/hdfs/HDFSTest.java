@@ -22,7 +22,7 @@ import org.junit.Test;
  *
  */
 public class HDFSTest {
- 
+  
     private FileSystem fs = null;
 
     @Before
