@@ -33,6 +33,8 @@ public class WordCountMain {
         job.setOutputKeyClass(Text.class);
         // 指定mr最终输出的value类型
         job.setOutputValueClass(IntWritable.class);
+        // 指定reduce任务数量（默认1个）
+        job.setNumReduceTasks(2);
         // 指定mr数据的输入路径
         // FileInputFormat.setInputPaths(job, "/wordcount/input");
         FileInputFormat.setInputPaths(job, "C:/Users/Administrator/Desktop/input");
