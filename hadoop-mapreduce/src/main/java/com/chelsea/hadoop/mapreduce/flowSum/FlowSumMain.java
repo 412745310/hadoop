@@ -32,8 +32,10 @@ public class FlowSumMain {
         job.setOutputKeyClass(Text.class);
         // 指定mr最终输出的value类型
         job.setOutputValueClass(FlowSumBean.class);
-        // 指定reduce任务数量（默认1个）
-        job.setNumReduceTasks(1);
+        // 指定reduce任务数量（默认1个，有多少个任务数量， 就有多少个分区文件）
+        job.setNumReduceTasks(6);
+        // 指定自定义分区类
+        job.setPartitionerClass(ProvincePartitioner.class);
         // 指定mr数据的输入路径
         FileInputFormat.setInputPaths(job, Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/flowSum");
         // 指定mr数据的输出路径
