@@ -23,6 +23,8 @@ public class WordCountMain {
         job.setJarByClass(WordCountMain.class);
         // 指定mapper类
         job.setMapperClass(WordCountMapper.class);
+        // 指定combiner类
+        job.setCombinerClass(WordCountReducer.class);
         // 指定reducer类
         job.setReducerClass(WordCountReducer.class);
         // 指定mapper类输出key类型
@@ -37,7 +39,7 @@ public class WordCountMain {
         job.setNumReduceTasks(2);
         // 指定mr数据的输入路径
         // FileInputFormat.setInputPaths(job, "/wordcount/input");
-        FileInputFormat.setInputPaths(job, Thread.currentThread().getContextClassLoader().getResource("").toString() + "C:/Users/Administrator/Desktop/input/wordCount");
+        FileInputFormat.setInputPaths(job, Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/wordCount");
         // 指定mr数据的输出路径
         // FileOutputFormat.setOutputPath(job, new Path("/wordcount/output"));
         FileOutputFormat.setOutputPath(job, new Path("C:/Users/Administrator/Desktop/output/wordCount"));
