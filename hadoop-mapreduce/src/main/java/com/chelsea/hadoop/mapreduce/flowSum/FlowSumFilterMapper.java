@@ -2,7 +2,6 @@ package com.chelsea.hadoop.mapreduce.flowSum;
 
 import java.io.IOException;
 
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -12,15 +11,15 @@ import org.apache.hadoop.mapreduce.Mapper;
  * @author shevchenko
  *
  */
-public class FlowSumFilterMapper extends Mapper<Text, FlowSumBean, Text, LongWritable>{
+public class FlowSumFilterMapper extends Mapper<Text, FlowSumBean, Text, Text>{
     
-    private LongWritable outValue = new LongWritable();
+    private Text outValue = new Text();
     
     @Override
-    protected void map(Text key, FlowSumBean value, Mapper<Text, FlowSumBean, Text, LongWritable>.Context context)
+    protected void map(Text key, FlowSumBean value, Mapper<Text, FlowSumBean, Text, Text>.Context context)
             throws IOException, InterruptedException {
         if (value.getSumFlow() >= 60) {
-            outValue.set(value.getSumFlow());
+            outValue.set(String.valueOf(value.getUpFlow() + "\t" + value.getDownFlow() + "\t" + value.getSumFlow()));
             context.write(key, outValue);
         }
     }
