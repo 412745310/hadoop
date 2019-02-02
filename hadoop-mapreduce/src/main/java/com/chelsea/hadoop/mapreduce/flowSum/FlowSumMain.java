@@ -20,8 +20,23 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  *
  */
 public class FlowSumMain {
+    
+    private String inputPath;
+    private String outputPath;
+    
+    public FlowSumMain(String inputPath, String outputPath) {
+        this.inputPath = inputPath;
+        this.outputPath = outputPath;
+    }
 
     public static void main(String[] args) throws Exception {
+        String inputPath = Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/flowSum";
+        String outputPath = "C:/Users/Administrator/Desktop/output/flowSum_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        // 提交程序，并且监控打印程序执行情况
+        new FlowSumMain(inputPath, outputPath).getJob().waitForCompletion(true);
+    }
+    
+    public Job getJob() throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, FlowSumReducer.class.getSimpleName());
         // 指定jar包运行主类
@@ -30,7 +45,7 @@ public class FlowSumMain {
         // 链式结构
         ChainMapper.addMapper(job, FlowSumMapper.class, LongWritable.class, Text.class, Text.class, FlowSumBean.class, conf);
         ChainReducer.setReducer(job, FlowSumReducer.class, Text.class, FlowSumBean.class, Text.class, FlowSumBean.class, conf);
-        ChainReducer.addMapper(job, FlowSumFilterMapper.class, Text.class, FlowSumBean.class, Text.class, LongWritable.class, conf);
+        ChainReducer.addMapper(job, FlowSumFilterMapper.class, Text.class, FlowSumBean.class, Text.class, Text.class, conf);
        
         // 指定mapper类
         //job.setMapperClass(FlowSumMapper.class);
@@ -51,12 +66,10 @@ public class FlowSumMain {
         // 指定自定义分区类
         //job.setPartitionerClass(ProvincePartitioner.class);
         // 指定mr数据的输入路径
-        FileInputFormat.setInputPaths(job, Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/flowSum");
+        FileInputFormat.setInputPaths(job, inputPath);
         // 指定mr数据的输出路径
-        FileOutputFormat.setOutputPath(job, new Path("C:/Users/Administrator/Desktop/output/flowSum_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))));
-        // 提交程序，并且监控打印程序执行情况
-        boolean b = job.waitForCompletion(true);
-        System.exit(b ? 0 : 1);
+        FileOutputFormat.setOutputPath(job, new Path(outputPath));
+        return job;
     }
     
 }

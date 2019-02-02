@@ -1,5 +1,8 @@
 package com.chelsea.hadoop.mapreduce.flowSort;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -14,8 +17,23 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  *
  */
 public class FlowSortMain {
+    
+    private String inputPath;
+    private String outputPath;
+    
+    public FlowSortMain(String inputPath, String outputPath) {
+        this.inputPath = inputPath;
+        this.outputPath = outputPath;
+    }
 
     public static void main(String[] args) throws Exception {
+        String inputPath = Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/flowSort";
+        String outputPath = "C:/Users/Administrator/Desktop/output/flowSort_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        // 提交程序，并且监控打印程序执行情况
+        new FlowSortMain(inputPath, outputPath).getJob().waitForCompletion(true);
+    }
+    
+    public Job getJob() throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
         // 指定jar包运行主类
@@ -35,12 +53,10 @@ public class FlowSortMain {
         // 指定reduce任务数量（默认1个）
         job.setNumReduceTasks(1);
         // 指定mr数据的输入路径
-        FileInputFormat.setInputPaths(job, Thread.currentThread().getContextClassLoader().getResource("").toString() + "file/flowSort");
+        FileInputFormat.setInputPaths(job, inputPath);
         // 指定mr数据的输出路径
-        FileOutputFormat.setOutputPath(job, new Path("C:/Users/Administrator/Desktop/output/flowSort"));
-        // 提交程序，并且监控打印程序执行情况
-        boolean b = job.waitForCompletion(true);
-        System.exit(b ? 0 : 1);
+        FileOutputFormat.setOutputPath(job, new Path(outputPath));
+        return job;
     }
     
 }
