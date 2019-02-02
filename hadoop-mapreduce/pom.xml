@@ -43,7 +43,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.chelsea.hadoop.mapreduce.WordCountMain</mainClass>
+							<mainClass>com.chelsea.hadoop.mapreduce.jobChain.JobChainMain</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
