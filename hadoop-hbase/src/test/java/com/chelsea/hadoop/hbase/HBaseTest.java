@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.CellUtil;
+import org.apache.hadoop.hbase.CompareOperator;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Admin;
@@ -18,9 +19,14 @@ import org.apache.hadoop.hbase.client.Delete;
 import org.apache.hadoop.hbase.client.Get;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.ResultScanner;
+import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.client.TableDescriptor;
 import org.apache.hadoop.hbase.client.TableDescriptorBuilder;
+import org.apache.hadoop.hbase.filter.FilterList;
+import org.apache.hadoop.hbase.filter.PrefixFilter;
+import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
@@ -131,6 +137,57 @@ public class HBaseTest {
         deleteList.add(delete);
 //        table.delete(delete);
         table.delete(deleteList);
+    }
+    
+    /**
+     * 查询所有数据
+     * @throws IOException
+     */
+    @Test
+    public void findAll() throws IOException {
+        String tableName = "testTable";
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Scan scan = new Scan();
+        scan.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes("name"));
+        scan.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes("age"));
+        ResultScanner scanner = table.getScanner(scan);
+        for (Result res : scanner) {
+            Cell cellName = res.getColumnLatestCell(Bytes.toBytes("cf1"), Bytes.toBytes("name"));
+            Cell cellAge = res.getColumnLatestCell(Bytes.toBytes("cf1"), Bytes.toBytes("age"));
+            String name = new String(CellUtil.cloneValue(cellName));
+            String age = new String(CellUtil.cloneValue(cellAge));
+            System.out.println(name + "_" + age);
+        }
+    }
+    
+    /**
+     * 按查询条件过滤
+     * 
+     * @throws IOException
+     */
+    @Test
+    public void findByFilter() throws IOException {
+        String tableName = "testTable";
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        FilterList list = new FilterList(FilterList.Operator.MUST_PASS_ALL);
+        PrefixFilter filter1 = new PrefixFilter(Bytes.toBytes("2"));
+        SingleColumnValueFilter filter2 = new SingleColumnValueFilter(Bytes.toBytes("cf1"), Bytes.toBytes("name"), CompareOperator.EQUAL, Bytes.toBytes("zhangsan"));
+        SingleColumnValueFilter filter3 = new SingleColumnValueFilter(Bytes.toBytes("cf1"), Bytes.toBytes("age"), CompareOperator.EQUAL, Bytes.toBytes("20"));
+        list.addFilter(filter1);
+        list.addFilter(filter2);
+        list.addFilter(filter3);
+        Scan scan = new Scan();
+        scan.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes("name"));
+        scan.addColumn(Bytes.toBytes("cf1"), Bytes.toBytes("age"));
+        scan.setFilter(list);
+        ResultScanner scanner = table.getScanner(scan);
+        for (Result res : scanner) {
+            Cell cellName = res.getColumnLatestCell(Bytes.toBytes("cf1"), Bytes.toBytes("name"));
+            Cell cellAge = res.getColumnLatestCell(Bytes.toBytes("cf1"), Bytes.toBytes("age"));
+            String name = new String(CellUtil.cloneValue(cellName));
+            String age = new String(CellUtil.cloneValue(cellAge));
+            System.out.println(name + "_" +age);
+        }
     }
     
     /**
