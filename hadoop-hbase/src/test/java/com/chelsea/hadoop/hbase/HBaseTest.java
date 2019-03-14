@@ -98,6 +98,27 @@ public class HBaseTest {
     }
     
     /**
+     * 新增序列化对象
+     * @throws IOException
+     */
+    @Test
+    public void insertProtobuf() throws IOException {
+        String tableName = "testTable";
+        String rowKey = "1";
+        String familyName = "cf1";
+        String column = "phone";
+        Phone.phone.Builder phone = Phone.phone.newBuilder();
+        phone.setDnum("13229345124");
+        phone.setLength("10");
+        phone.setType("1");
+        phone.setDate("20190314");
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Put put = new Put(Bytes.toBytes(rowKey));
+        put.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(column), phone.build().toByteArray());
+        table.put(put);
+    }
+    
+    /**
      * 查询数据
      * @throws IOException 
      */
