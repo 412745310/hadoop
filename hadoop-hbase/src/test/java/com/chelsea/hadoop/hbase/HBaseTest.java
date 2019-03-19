@@ -107,7 +107,7 @@ public class HBaseTest {
         String rowKey = "1";
         String familyName = "cf1";
         String column = "phone";
-        Phone.phone.Builder phone = Phone.phone.newBuilder();
+        Phone.PhoneDetail.Builder phone = Phone.PhoneDetail.newBuilder();
         phone.setDnum("13229345124");
         phone.setLength("10");
         phone.setType("1");
@@ -115,6 +115,36 @@ public class HBaseTest {
         Table table = connection.getTable(TableName.valueOf(tableName));
         Put put = new Put(Bytes.toBytes(rowKey));
         put.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(column), phone.build().toByteArray());
+        table.put(put);
+    }
+    
+    /**
+     * 新增序列化对象集合
+     * 
+     * @throws IOException
+     */
+    @Test
+    public void insertProtobufList() throws IOException {
+        String tableName = "testTable";
+        String rowKey = "1";
+        String familyName = "cf1";
+        String columnName = "dayPhone";
+        Phone.PhoneDetail.Builder phone1 = Phone.PhoneDetail.newBuilder();
+        phone1.setDnum("13229345124");
+        phone1.setLength("10");
+        phone1.setType("1");
+        phone1.setDate("20190314");
+        Phone.PhoneDetail.Builder phone2 = Phone.PhoneDetail.newBuilder();
+        phone2.setDnum("18580251861");
+        phone2.setLength("20");
+        phone2.setType("0");
+        phone2.setDate("20190314");
+        Phone.DayPhoneDetail.Builder dayPhone = Phone.DayPhoneDetail.newBuilder();
+        dayPhone.addPhoneDetail(phone1);
+        dayPhone.addPhoneDetail(phone2);
+        Put put = new Put(Bytes.toBytes(rowKey));
+        put.addColumn(familyName.getBytes(), columnName.getBytes(), dayPhone.build().toByteArray());
+        Table table = connection.getTable(TableName.valueOf(tableName));
         table.put(put);
     }
     
@@ -140,6 +170,28 @@ public class HBaseTest {
             String column = new String(CellUtil.cloneQualifier(cell));
             String value = new String(CellUtil.cloneValue(cell));
             System.out.println(family + ":" + column + ":" + value);
+        }
+    }
+    
+    /**
+     * 查询序列化对象集合
+     * 
+     * @throws IOException
+     */
+    @Test
+    public void selectProtobufList() throws IOException {
+        String tableName = "testTable";
+        String rowKey = "1";
+        String familyName = "cf1";
+        String columnName = "dayPhone";
+        Table table = connection.getTable(TableName.valueOf(tableName));
+        Get get = new Get(Bytes.toBytes(rowKey));
+        Result result = table.get(get);
+        Cell cell = result.getColumnLatestCell(familyName.getBytes(), columnName.getBytes());
+        Phone.DayPhoneDetail dayPhoneDetail = Phone.DayPhoneDetail.parseFrom(CellUtil.cloneValue(cell));
+        for (Phone.PhoneDetail phone : dayPhoneDetail.getPhoneDetailList()) {
+            System.out.print(phone.getDnum() + "_" + phone.getLength() + "_" + phone.getType() + "_" + phone.getDate());
+            System.out.println();
         }
     }
     
