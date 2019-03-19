@@ -14,8 +14,8 @@ public final class Phone {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface phoneOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.chelsea.hadoop.hbase.phone)
+  public interface PhoneDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.chelsea.hadoop.hbase.PhoneDetail)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -75,18 +75,18 @@ public final class Phone {
         getDateBytes();
   }
   /**
-   * Protobuf type {@code com.chelsea.hadoop.hbase.phone}
+   * Protobuf type {@code com.chelsea.hadoop.hbase.PhoneDetail}
    */
-  public  static final class phone extends
+  public  static final class PhoneDetail extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.chelsea.hadoop.hbase.phone)
-      phoneOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.chelsea.hadoop.hbase.PhoneDetail)
+      PhoneDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use phone.newBuilder() to construct.
-    private phone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PhoneDetail.newBuilder() to construct.
+    private PhoneDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private phone() {
+    private PhoneDetail() {
       dnum_ = "";
       length_ = "";
       type_ = "";
@@ -98,7 +98,7 @@ public final class Phone {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private phone(
+    private PhoneDetail(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -162,15 +162,15 @@ public final class Phone {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_phone_descriptor;
+      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_phone_fieldAccessorTable
+      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_PhoneDetail_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.chelsea.hadoop.hbase.Phone.phone.class, com.chelsea.hadoop.hbase.Phone.phone.Builder.class);
+              com.chelsea.hadoop.hbase.Phone.PhoneDetail.class, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder.class);
     }
 
     private int bitField0_;
@@ -415,10 +415,10 @@ public final class Phone {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.chelsea.hadoop.hbase.Phone.phone)) {
+      if (!(obj instanceof com.chelsea.hadoop.hbase.Phone.PhoneDetail)) {
         return super.equals(obj);
       }
-      com.chelsea.hadoop.hbase.Phone.phone other = (com.chelsea.hadoop.hbase.Phone.phone) obj;
+      com.chelsea.hadoop.hbase.Phone.PhoneDetail other = (com.chelsea.hadoop.hbase.Phone.PhoneDetail) obj;
 
       if (hasDnum() != other.hasDnum()) return false;
       if (hasDnum()) {
@@ -472,69 +472,69 @@ public final class Phone {
       return hash;
     }
 
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(byte[] data)
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(java.io.InputStream input)
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseDelimitedFrom(java.io.InputStream input)
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseDelimitedFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.chelsea.hadoop.hbase.Phone.phone parseFrom(
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -547,7 +547,7 @@ public final class Phone {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.chelsea.hadoop.hbase.Phone.phone prototype) {
+    public static Builder newBuilder(com.chelsea.hadoop.hbase.Phone.PhoneDetail prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -563,26 +563,26 @@ public final class Phone {
       return builder;
     }
     /**
-     * Protobuf type {@code com.chelsea.hadoop.hbase.phone}
+     * Protobuf type {@code com.chelsea.hadoop.hbase.PhoneDetail}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.chelsea.hadoop.hbase.phone)
-        com.chelsea.hadoop.hbase.Phone.phoneOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.chelsea.hadoop.hbase.PhoneDetail)
+        com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_phone_descriptor;
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_phone_fieldAccessorTable
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_PhoneDetail_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.chelsea.hadoop.hbase.Phone.phone.class, com.chelsea.hadoop.hbase.Phone.phone.Builder.class);
+                com.chelsea.hadoop.hbase.Phone.PhoneDetail.class, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder.class);
       }
 
-      // Construct using com.chelsea.hadoop.hbase.Phone.phone.newBuilder()
+      // Construct using com.chelsea.hadoop.hbase.Phone.PhoneDetail.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -614,17 +614,17 @@ public final class Phone {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_phone_descriptor;
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor;
       }
 
       @java.lang.Override
-      public com.chelsea.hadoop.hbase.Phone.phone getDefaultInstanceForType() {
-        return com.chelsea.hadoop.hbase.Phone.phone.getDefaultInstance();
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail getDefaultInstanceForType() {
+        return com.chelsea.hadoop.hbase.Phone.PhoneDetail.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.chelsea.hadoop.hbase.Phone.phone build() {
-        com.chelsea.hadoop.hbase.Phone.phone result = buildPartial();
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail build() {
+        com.chelsea.hadoop.hbase.Phone.PhoneDetail result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -632,8 +632,8 @@ public final class Phone {
       }
 
       @java.lang.Override
-      public com.chelsea.hadoop.hbase.Phone.phone buildPartial() {
-        com.chelsea.hadoop.hbase.Phone.phone result = new com.chelsea.hadoop.hbase.Phone.phone(this);
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail buildPartial() {
+        com.chelsea.hadoop.hbase.Phone.PhoneDetail result = new com.chelsea.hadoop.hbase.Phone.PhoneDetail(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -691,16 +691,16 @@ public final class Phone {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.chelsea.hadoop.hbase.Phone.phone) {
-          return mergeFrom((com.chelsea.hadoop.hbase.Phone.phone)other);
+        if (other instanceof com.chelsea.hadoop.hbase.Phone.PhoneDetail) {
+          return mergeFrom((com.chelsea.hadoop.hbase.Phone.PhoneDetail)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.chelsea.hadoop.hbase.Phone.phone other) {
-        if (other == com.chelsea.hadoop.hbase.Phone.phone.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.chelsea.hadoop.hbase.Phone.PhoneDetail other) {
+        if (other == com.chelsea.hadoop.hbase.Phone.PhoneDetail.getDefaultInstance()) return this;
         if (other.hasDnum()) {
           bitField0_ |= 0x00000001;
           dnum_ = other.dnum_;
@@ -748,11 +748,11 @@ public final class Phone {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.chelsea.hadoop.hbase.Phone.phone parsedMessage = null;
+        com.chelsea.hadoop.hbase.Phone.PhoneDetail parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.chelsea.hadoop.hbase.Phone.phone) e.getUnfinishedMessage();
+          parsedMessage = (com.chelsea.hadoop.hbase.Phone.PhoneDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1079,51 +1079,848 @@ public final class Phone {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.chelsea.hadoop.hbase.phone)
+      // @@protoc_insertion_point(builder_scope:com.chelsea.hadoop.hbase.PhoneDetail)
     }
 
-    // @@protoc_insertion_point(class_scope:com.chelsea.hadoop.hbase.phone)
-    private static final com.chelsea.hadoop.hbase.Phone.phone DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.chelsea.hadoop.hbase.PhoneDetail)
+    private static final com.chelsea.hadoop.hbase.Phone.PhoneDetail DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.chelsea.hadoop.hbase.Phone.phone();
+      DEFAULT_INSTANCE = new com.chelsea.hadoop.hbase.Phone.PhoneDetail();
     }
 
-    public static com.chelsea.hadoop.hbase.Phone.phone getDefaultInstance() {
+    public static com.chelsea.hadoop.hbase.Phone.PhoneDetail getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<phone>
-        PARSER = new com.google.protobuf.AbstractParser<phone>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<PhoneDetail>
+        PARSER = new com.google.protobuf.AbstractParser<PhoneDetail>() {
       @java.lang.Override
-      public phone parsePartialFrom(
+      public PhoneDetail parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new phone(input, extensionRegistry);
+        return new PhoneDetail(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<phone> parser() {
+    public static com.google.protobuf.Parser<PhoneDetail> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<phone> getParserForType() {
+    public com.google.protobuf.Parser<PhoneDetail> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.chelsea.hadoop.hbase.Phone.phone getDefaultInstanceForType() {
+    public com.chelsea.hadoop.hbase.Phone.PhoneDetail getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DayPhoneDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.chelsea.hadoop.hbase.DayPhoneDetail)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail> 
+        getPhoneDetailList();
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    com.chelsea.hadoop.hbase.Phone.PhoneDetail getPhoneDetail(int index);
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    int getPhoneDetailCount();
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    java.util.List<? extends com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder> 
+        getPhoneDetailOrBuilderList();
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder getPhoneDetailOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.chelsea.hadoop.hbase.DayPhoneDetail}
+   */
+  public  static final class DayPhoneDetail extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.chelsea.hadoop.hbase.DayPhoneDetail)
+      DayPhoneDetailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DayPhoneDetail.newBuilder() to construct.
+    private DayPhoneDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DayPhoneDetail() {
+      phoneDetail_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DayPhoneDetail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                phoneDetail_ = new java.util.ArrayList<com.chelsea.hadoop.hbase.Phone.PhoneDetail>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              phoneDetail_.add(
+                  input.readMessage(com.chelsea.hadoop.hbase.Phone.PhoneDetail.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          phoneDetail_ = java.util.Collections.unmodifiableList(phoneDetail_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.class, com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.Builder.class);
+    }
+
+    public static final int PHONEDETAIL_FIELD_NUMBER = 1;
+    private java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail> phoneDetail_;
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    public java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail> getPhoneDetailList() {
+      return phoneDetail_;
+    }
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    public java.util.List<? extends com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder> 
+        getPhoneDetailOrBuilderList() {
+      return phoneDetail_;
+    }
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    public int getPhoneDetailCount() {
+      return phoneDetail_.size();
+    }
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    public com.chelsea.hadoop.hbase.Phone.PhoneDetail getPhoneDetail(int index) {
+      return phoneDetail_.get(index);
+    }
+    /**
+     * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+     */
+    public com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder getPhoneDetailOrBuilder(
+        int index) {
+      return phoneDetail_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      for (int i = 0; i < getPhoneDetailCount(); i++) {
+        if (!getPhoneDetail(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < phoneDetail_.size(); i++) {
+        output.writeMessage(1, phoneDetail_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < phoneDetail_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, phoneDetail_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.chelsea.hadoop.hbase.Phone.DayPhoneDetail)) {
+        return super.equals(obj);
+      }
+      com.chelsea.hadoop.hbase.Phone.DayPhoneDetail other = (com.chelsea.hadoop.hbase.Phone.DayPhoneDetail) obj;
+
+      if (!getPhoneDetailList()
+          .equals(other.getPhoneDetailList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPhoneDetailCount() > 0) {
+        hash = (37 * hash) + PHONEDETAIL_FIELD_NUMBER;
+        hash = (53 * hash) + getPhoneDetailList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.chelsea.hadoop.hbase.Phone.DayPhoneDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.chelsea.hadoop.hbase.DayPhoneDetail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.chelsea.hadoop.hbase.DayPhoneDetail)
+        com.chelsea.hadoop.hbase.Phone.DayPhoneDetailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.class, com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.Builder.class);
+      }
+
+      // Construct using com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPhoneDetailFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (phoneDetailBuilder_ == null) {
+          phoneDetail_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          phoneDetailBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.chelsea.hadoop.hbase.Phone.internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor;
+      }
+
+      @java.lang.Override
+      public com.chelsea.hadoop.hbase.Phone.DayPhoneDetail getDefaultInstanceForType() {
+        return com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.chelsea.hadoop.hbase.Phone.DayPhoneDetail build() {
+        com.chelsea.hadoop.hbase.Phone.DayPhoneDetail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.chelsea.hadoop.hbase.Phone.DayPhoneDetail buildPartial() {
+        com.chelsea.hadoop.hbase.Phone.DayPhoneDetail result = new com.chelsea.hadoop.hbase.Phone.DayPhoneDetail(this);
+        int from_bitField0_ = bitField0_;
+        if (phoneDetailBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            phoneDetail_ = java.util.Collections.unmodifiableList(phoneDetail_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.phoneDetail_ = phoneDetail_;
+        } else {
+          result.phoneDetail_ = phoneDetailBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.chelsea.hadoop.hbase.Phone.DayPhoneDetail) {
+          return mergeFrom((com.chelsea.hadoop.hbase.Phone.DayPhoneDetail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.chelsea.hadoop.hbase.Phone.DayPhoneDetail other) {
+        if (other == com.chelsea.hadoop.hbase.Phone.DayPhoneDetail.getDefaultInstance()) return this;
+        if (phoneDetailBuilder_ == null) {
+          if (!other.phoneDetail_.isEmpty()) {
+            if (phoneDetail_.isEmpty()) {
+              phoneDetail_ = other.phoneDetail_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePhoneDetailIsMutable();
+              phoneDetail_.addAll(other.phoneDetail_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.phoneDetail_.isEmpty()) {
+            if (phoneDetailBuilder_.isEmpty()) {
+              phoneDetailBuilder_.dispose();
+              phoneDetailBuilder_ = null;
+              phoneDetail_ = other.phoneDetail_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              phoneDetailBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPhoneDetailFieldBuilder() : null;
+            } else {
+              phoneDetailBuilder_.addAllMessages(other.phoneDetail_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        for (int i = 0; i < getPhoneDetailCount(); i++) {
+          if (!getPhoneDetail(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.chelsea.hadoop.hbase.Phone.DayPhoneDetail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.chelsea.hadoop.hbase.Phone.DayPhoneDetail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail> phoneDetail_ =
+        java.util.Collections.emptyList();
+      private void ensurePhoneDetailIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          phoneDetail_ = new java.util.ArrayList<com.chelsea.hadoop.hbase.Phone.PhoneDetail>(phoneDetail_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.chelsea.hadoop.hbase.Phone.PhoneDetail, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder, com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder> phoneDetailBuilder_;
+
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail> getPhoneDetailList() {
+        if (phoneDetailBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(phoneDetail_);
+        } else {
+          return phoneDetailBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public int getPhoneDetailCount() {
+        if (phoneDetailBuilder_ == null) {
+          return phoneDetail_.size();
+        } else {
+          return phoneDetailBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail getPhoneDetail(int index) {
+        if (phoneDetailBuilder_ == null) {
+          return phoneDetail_.get(index);
+        } else {
+          return phoneDetailBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder setPhoneDetail(
+          int index, com.chelsea.hadoop.hbase.Phone.PhoneDetail value) {
+        if (phoneDetailBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.set(index, value);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder setPhoneDetail(
+          int index, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder builderForValue) {
+        if (phoneDetailBuilder_ == null) {
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          phoneDetailBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder addPhoneDetail(com.chelsea.hadoop.hbase.Phone.PhoneDetail value) {
+        if (phoneDetailBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.add(value);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder addPhoneDetail(
+          int index, com.chelsea.hadoop.hbase.Phone.PhoneDetail value) {
+        if (phoneDetailBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.add(index, value);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder addPhoneDetail(
+          com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder builderForValue) {
+        if (phoneDetailBuilder_ == null) {
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.add(builderForValue.build());
+          onChanged();
+        } else {
+          phoneDetailBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder addPhoneDetail(
+          int index, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder builderForValue) {
+        if (phoneDetailBuilder_ == null) {
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          phoneDetailBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder addAllPhoneDetail(
+          java.lang.Iterable<? extends com.chelsea.hadoop.hbase.Phone.PhoneDetail> values) {
+        if (phoneDetailBuilder_ == null) {
+          ensurePhoneDetailIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, phoneDetail_);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder clearPhoneDetail() {
+        if (phoneDetailBuilder_ == null) {
+          phoneDetail_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public Builder removePhoneDetail(int index) {
+        if (phoneDetailBuilder_ == null) {
+          ensurePhoneDetailIsMutable();
+          phoneDetail_.remove(index);
+          onChanged();
+        } else {
+          phoneDetailBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder getPhoneDetailBuilder(
+          int index) {
+        return getPhoneDetailFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder getPhoneDetailOrBuilder(
+          int index) {
+        if (phoneDetailBuilder_ == null) {
+          return phoneDetail_.get(index);  } else {
+          return phoneDetailBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public java.util.List<? extends com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder> 
+           getPhoneDetailOrBuilderList() {
+        if (phoneDetailBuilder_ != null) {
+          return phoneDetailBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(phoneDetail_);
+        }
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder addPhoneDetailBuilder() {
+        return getPhoneDetailFieldBuilder().addBuilder(
+            com.chelsea.hadoop.hbase.Phone.PhoneDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder addPhoneDetailBuilder(
+          int index) {
+        return getPhoneDetailFieldBuilder().addBuilder(
+            index, com.chelsea.hadoop.hbase.Phone.PhoneDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.chelsea.hadoop.hbase.PhoneDetail phoneDetail = 1;</code>
+       */
+      public java.util.List<com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder> 
+           getPhoneDetailBuilderList() {
+        return getPhoneDetailFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.chelsea.hadoop.hbase.Phone.PhoneDetail, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder, com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder> 
+          getPhoneDetailFieldBuilder() {
+        if (phoneDetailBuilder_ == null) {
+          phoneDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.chelsea.hadoop.hbase.Phone.PhoneDetail, com.chelsea.hadoop.hbase.Phone.PhoneDetail.Builder, com.chelsea.hadoop.hbase.Phone.PhoneDetailOrBuilder>(
+                  phoneDetail_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          phoneDetail_ = null;
+        }
+        return phoneDetailBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.chelsea.hadoop.hbase.DayPhoneDetail)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.chelsea.hadoop.hbase.DayPhoneDetail)
+    private static final com.chelsea.hadoop.hbase.Phone.DayPhoneDetail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.chelsea.hadoop.hbase.Phone.DayPhoneDetail();
+    }
+
+    public static com.chelsea.hadoop.hbase.Phone.DayPhoneDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<DayPhoneDetail>
+        PARSER = new com.google.protobuf.AbstractParser<DayPhoneDetail>() {
+      @java.lang.Override
+      public DayPhoneDetail parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DayPhoneDetail(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DayPhoneDetail> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DayPhoneDetail> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.chelsea.hadoop.hbase.Phone.DayPhoneDetail getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_chelsea_hadoop_hbase_phone_descriptor;
+    internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_chelsea_hadoop_hbase_phone_fieldAccessorTable;
+      internal_static_com_chelsea_hadoop_hbase_PhoneDetail_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1134,8 +1931,10 @@ public final class Phone {
   static {
     java.lang.String[] descriptorData = {
       "\n\013phone.proto\022\030com.chelsea.hadoop.hbase\"" +
-      "A\n\005phone\022\014\n\004dnum\030\001 \002(\t\022\016\n\006length\030\002 \002(\t\022\014" +
-      "\n\004type\030\003 \002(\t\022\014\n\004date\030\004 \002(\t"
+      "G\n\013PhoneDetail\022\014\n\004dnum\030\001 \002(\t\022\016\n\006length\030\002" +
+      " \002(\t\022\014\n\004type\030\003 \002(\t\022\014\n\004date\030\004 \002(\t\"L\n\016DayP" +
+      "honeDetail\022:\n\013phoneDetail\030\001 \003(\0132%.com.ch" +
+      "elsea.hadoop.hbase.PhoneDetail"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1149,12 +1948,18 @@ public final class Phone {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_chelsea_hadoop_hbase_phone_descriptor =
+    internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_chelsea_hadoop_hbase_phone_fieldAccessorTable = new
+    internal_static_com_chelsea_hadoop_hbase_PhoneDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_chelsea_hadoop_hbase_phone_descriptor,
+        internal_static_com_chelsea_hadoop_hbase_PhoneDetail_descriptor,
         new java.lang.String[] { "Dnum", "Length", "Type", "Date", });
+    internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_chelsea_hadoop_hbase_DayPhoneDetail_descriptor,
+        new java.lang.String[] { "PhoneDetail", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
