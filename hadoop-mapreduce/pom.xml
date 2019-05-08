@@ -51,7 +51,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.chelsea.hadoop.mapreduce.hbase.WordCountMain</mainClass>
+                            <mainClass>com.chelsea.hadoop.mapreduce.hbase2mysql.WordCountMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
