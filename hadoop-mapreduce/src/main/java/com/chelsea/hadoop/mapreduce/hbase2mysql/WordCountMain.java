@@ -23,11 +23,15 @@ public class WordCountMain {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         conf.set("hbase.zookeeper.quorum", "47.107.247.223");
+        conf.addResource("transformer-env.xml");
+        conf.addResource("query-mapping.xml");
+        conf.addResource("output-collector.xml");
         Job job = Job.getInstance(conf);
         // 指定jar包运行主类
         job.setJarByClass(WordCountMain.class);
         TableMapReduceUtil.initTableMapperJob(initScans(), WordCountMapper.class, Text.class, Text.class, job, true);
-        job.setOutputFormatClass(TransformerOutputFormat.class);
+        // 指定自定义输出类
+        job.setOutputFormatClass(MysqlOutputFormat.class);
         // 提交程序，并且监控打印程序执行情况
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);
