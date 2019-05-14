@@ -8,6 +8,8 @@ import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
 
 import com.google.common.collect.Lists;
 
@@ -18,24 +20,7 @@ import com.google.common.collect.Lists;
  * @author shevchenko
  *
  */
-public class WordCountMain {
-
-    public static void main(String[] args) throws Exception {
-        Configuration conf = new Configuration();
-        conf.set("hbase.zookeeper.quorum", "47.107.247.223");
-        conf.addResource("transformer-env.xml");
-        conf.addResource("query-mapping.xml");
-        conf.addResource("output-collector.xml");
-        Job job = Job.getInstance(conf);
-        // 指定jar包运行主类
-        job.setJarByClass(WordCountMain.class);
-        TableMapReduceUtil.initTableMapperJob(initScans(), WordCountMapper.class, Text.class, Text.class, job, true);
-        // 指定自定义输出类
-        job.setOutputFormatClass(MysqlOutputFormat.class);
-        // 提交程序，并且监控打印程序执行情况
-        boolean b = job.waitForCompletion(true);
-        System.exit(b ? 0 : 1);
-    }
+public class WordCountMain implements Tool {
 
     private static List<Scan> initScans() {
         Scan scan = new Scan();
@@ -45,6 +30,44 @@ public class WordCountMain {
         scan.setCacheBlocks(true); // 启动cache blocks
         scan.setCaching(1000); // 设置每次返回的行数，默认值100，设置较大的值可以提高速度(减少rpc操作)，但是较大的值可能会导致内存异常。
         return Lists.newArrayList(scan);
+    }
+    
+    protected Configuration conf;
+
+    @Override
+    public Configuration getConf() {
+        return this.conf;
+    }
+
+    @Override
+    public void setConf(Configuration conf) {
+        conf.set("hbase.zookeeper.quorum", "47.107.247.223");
+        conf.addResource("transformer-env.xml");
+        conf.addResource("query-mapping.xml");
+        conf.addResource("output-collector.xml");
+        this.conf = conf;
+    }
+
+    @Override
+    public int run(String[] arg0) throws Exception {
+        Job job = Job.getInstance(conf);
+        // 指定jar包运行主类
+        job.setJarByClass(WordCountMain.class);
+        TableMapReduceUtil.initTableMapperJob(initScans(), WordCountMapper.class, Text.class, Text.class, job, true);
+        // 指定自定义输出类
+        job.setOutputFormatClass(MysqlOutputFormat.class);
+        // 提交程序，并且监控打印程序执行情况
+        boolean b = job.waitForCompletion(true);
+        System.exit(b ? 0 : 1);
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+        try {
+            ToolRunner.run(new Configuration(), new WordCountMain(), args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
